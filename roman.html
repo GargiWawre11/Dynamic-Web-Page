@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number to Roman Converter</title>
+<meta charset="UTF-8">
+</head>
+<body style="background-color:powderblue;">
+<h1>Number to Roman Converter</h1>
+<input type="number" id="number" placeholder="Enter a number">
+<button type="button" onclick="convert()">convert</button>
+<div id="roman_number"></div>
+
+<script>
+function convert() 
+{
+  // Get the number from the input field.
+  var number = document.getElementById("number").value;
+
+  // Convert the number to Roman numerals.
+  var roman_number = "";
+  while (number > 0) 
+  {
+    if (number >= 1000) 
+    {
+      roman_number += "M";
+      number -= 1000;
+    } 
+    else if (number >= 900) 
+    {
+    
+      roman_number += "CM";
+      number -= 900;
+    } 
+    else if (number >= 500) 
+    {
+      roman_number += "D";
+      number -= 500;
+    } 
+    else if (number >= 400) 
+    {
+      roman_number += "CD";
+      number -= 400;
+    } 
+    else if (number >= 100) 
+    {
+      roman_number += "C";
+      number -= 100;
+    } 
+    else if (number >= 90) 
+    {
+      roman_number += "XC";
+      
+      number -= 90;
+    } 
+    else if (number >= 50) 
+    {
+      roman_number += "L";
+      number -= 50;
+    } 
+    else if (number >= 40) 
+    {
+      roman_number += "XL";
+      number -= 40;
+    } 
+    else if (number >= 10) 
+    {
+      roman_number += "X";
+      number -= 10;
+    } 
+    else if (number >= 9) 
+    {
+      roman_number += "IX";
+      number -= 9;
+    } 
+    else if (number >= 5) 
+    {
+      roman_number += "V";
+      number -= 5;
+    } 
+    else if (number >= 4) 
+    {
+      roman_number += "IV";
+      number -= 4;
+    } 
+    else {
+      roman_number += "I";
+      number -= 1;
+    }
+  }
+document.getElementById("roman_number").innerHTML = roman_number;
+
+}
+</script>
+</body>
+</html>
